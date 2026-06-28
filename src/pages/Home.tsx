@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Phone, MessageCircle, Mail, MapPin, Facebook, Send, Star } from 'lucide-react';
+import { ChevronDown, Phone, MessageCircle, Mail, MapPin, Facebook, Send } from 'lucide-react';
 
 // Service data organized by categories with AI-generated images
 const serviceCategories = {
@@ -157,30 +157,6 @@ const serviceCategories = {
   }
 };
 
-const reviews = [
-  {
-    id: 1,
-    name: 'Rahat Ahmed',
-    rating: 5,
-    comment: 'The best spa experience in Uttara! The environment is very clean and the therapists are highly professional. Highly recommended for anyone looking for relaxation.',
-    date: '2 days ago'
-  },
-  {
-    id: 2,
-    name: 'Sultana Razia',
-    rating: 5,
-    comment: 'Amazing Thai massage. I felt completely rejuvenated after the session. The staff is very welcoming and the pricing is very reasonable.',
-    date: '1 week ago'
-  },
-  {
-    id: 3,
-    name: 'Tanvir Hossain',
-    rating: 4,
-    comment: 'Very professional service. The hot stone massage was excellent. Clean facilities and a peaceful atmosphere.',
-    date: '2 weeks ago'
-  }
-];
-
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('massage');
   const [expandedFAQ, setExpandedFAQ] = useState<number | null>(null);
@@ -232,7 +208,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <img 
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/hero-banner-5pmpKe6W4qykgycDebMVoH.webp" 
+              src="/manus-storage/058a29a0-6b5c-11f1-a3cc-fbd4bae1063e(2)_6c809137.png" 
               alt="Aroma Spa Logo" 
               className="h-12 w-12 object-contain"
             />
@@ -254,7 +230,7 @@ export default function Home() {
       <section 
         className="relative h-96 bg-cover bg-center flex items-center justify-center"
         style={{
-          backgroundImage: 'url(https://d2xsxph8kpxj0f.cloudfront.net/310519663774431221/LT5ZWTzwr2FoeyCjZuGkmK/hero-banner-5pmpKe6W4qykgycDebMVoH.webp)',
+          backgroundImage: 'url(/manus-storage/hero-banner_ae46e6f7.jpg)',
           backgroundAttachment: 'fixed'
         }}
       >
@@ -341,32 +317,6 @@ export default function Home() {
                   >
                     Book Now
                   </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Customer Reviews Section */}
-      <section className="py-16 px-4 bg-amber-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">What Our Customers Say</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {reviews.map((review) => (
-              <div key={review.id} className="bg-white p-8 rounded-2xl shadow-sm border border-amber-100">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      className={`w-5 h-5 ${i < review.rating ? 'fill-amber-400 text-amber-400' : 'text-gray-300'}`} 
-                    />
-                  ))}
-                </div>
-                <p className="text-gray-700 italic mb-6">"{review.comment}"</p>
-                <div className="flex justify-between items-center">
-                  <span className="font-bold text-gray-900">{review.name}</span>
-                  <span className="text-sm text-gray-500">{review.date}</span>
                 </div>
               </div>
             ))}
@@ -466,22 +416,17 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Map */}
+            {/* 3D Street View Map */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden h-96">
-              <div className="relative w-full h-full">
-                <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-md border border-amber-100">
-                  <p className="text-xs font-bold text-amber-800 uppercase tracking-wider">Building 3D View</p>
-                </div>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!4v1718960000000!6m8!1m2!1s-u8mY-u_uY-u_uY-u_uY-u_u!2s23.8776654!3s90.3923483!7i13312!8i6656"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen={true}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!4v1718900000!6m8!1m7!1sb-jbJUfx9e1lVSrSJEO2Sg!2m2!1d23.8775521!2d90.3990835!3f233.72758!4f0!5f0.7820865974627469"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </div>
 
